@@ -1,0 +1,2341 @@
+* {
+    outline: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // font-family: ;
+}
+a {
+    width: fit-content;
+    text-decoration: none;
+}
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container {
+    width: 86.1%;
+    margin: 0 auto;
+}
+.footerItem {
+    // margin-right: 50px;
+    line-height: 35px;
+    color: #cacaca;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+$maincolor: #ffc839;
+body {
+    header {
+        background-image: linear-gradient(
+                0.87deg,
+                rgba(2, 55, 135, 0.9) 0.69%,
+                rgba(81, 38, 174, 0.4736) 100.48%,
+                rgba(38, 92, 174, 0.0102906) 100.49%,
+                rgba(195, 195, 196, 0.00520833) 100.5%,
+                #76a6ef 100.51%
+            ),
+            url(/REUI/PrepareUI/house.png);
+        background-repeat: no-repeat, no-repeat;
+        background-size: cover, cover;
+        background-position: center center, center top;
+        padding-bottom: 73px;
+        .container {
+            .nav {
+                padding-top: 42px;
+                display: flex;
+
+                .menu {
+                    position: relative;
+                    display: flex;
+                    justify-content: space-between;
+                    width: 530px;
+
+                    .nav_line {
+                        position: absolute;
+                        left: 0;
+                        bottom: -10px;
+                        width: 20px;
+                        height: 2px;
+                        background-color: rgb(255, 255, 255);
+                        transition: 0.3s;
+                    }
+                    .itemsMenu {
+                        font-family: "Roboto";
+                        font-weight: 300;
+                        color: white;
+                        font-size: 18px;
+                        white-space: nowrap;
+                    }
+                }
+                .burger {
+                    display: none;
+                }
+                .burgerMenu {
+                    display: none;
+                }
+            }
+            .headercontent {
+                font-family: "Nunito";
+                width: 60%;
+                margin-top: 190px;
+                color: white;
+                h1 {
+                    font-size: 60px;
+                    line-height: 82px;
+                    opacity: 0;
+                    animation-name: moveline;
+                    animation-duration: 1000ms;
+                    animation-delay: 1s;
+                    animation-fill-mode: forwards;
+                }
+
+                h2 {
+                    margin-top: 30px;
+                    font-size: 29px;
+                    line-height: 40px;
+                    font-weight: 200;
+                    opacity: 0;
+                    animation-name: moveline;
+                    animation-duration: 1000ms;
+                    animation-delay: 1.2s;
+                    animation-fill-mode: forwards;
+                }
+                @keyframes moveline {
+                    0% {
+                        transform: translate(-850px);
+                        opacity: 0;
+                    }
+                    100% {
+                        transform: translate(0px);
+                        opacity: 1;
+                    }
+                }
+            }
+            .searchBbox {
+                margin-top: 80px;
+                display: flex;
+                justify-content: space-between;
+                background-color: #ffffff;
+                box-shadow: 6px 9px 59px 3px rgba(0, 0, 0, 0.01);
+                padding: 8px 12px;
+                input {
+                    border: 0;
+                    width: 100%;
+                    font-family: "Roboto";
+                    font-size: 23px;
+                    padding: 8px;
+                }
+                button {
+                    padding: 30px 80px;
+                    background-color: #ffb700;
+                    outline: none;
+                    border: none;
+                    color: black;
+                    font-size: 23px;
+                    line-height: 27px;
+                    font-family: "Roboto";
+                    position: relative;
+                    overflow: hidden;
+                    span {
+                        position: relative;
+                        &::after {
+                            position: absolute;
+                            content: "Search";
+                            top: -11px;
+                            left: -31px;
+                            z-index: 2;
+                            transition: 0.2s;
+                        }
+                    }
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 200px;
+                        height: 200px;
+                        background-color: #ffc839;
+                        top: 0px;
+                        left: 0px;
+                        transform: rotate(20deg) translate(-27px, 41px);
+                        transform-origin: center;
+                        transition: 0.2s;
+                    }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 200px;
+                        height: 200px;
+                        background-color: #ffc839;
+                        top: 0px;
+                        left: 0px;
+                        transform: rotate(20deg) translate(-27px, -158px);
+                        transform-origin: center;
+                        transition: 0.2s;
+                    }
+                    &:hover::after {
+                        transform: rotate(20deg) translate(-27px, -210px);
+                    }
+                    &:hover::before {
+                        transform: rotate(20deg) translate(-27px, 95px);
+                    }
+                    &:hover span::after {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+    main {
+        .cards {
+            margin-top: 80px;
+            margin-bottom: 80px;
+            .card {
+                box-shadow: 0px 30px 30px -15px rgba(171, 124, 0, 0.29);
+                width: 32%;
+                background-color: $maincolor;
+                transition: 0.3s;
+                position: relative;
+                &:hover {
+                    transform: translate(-5px, -10px);
+                }
+
+                .cardPhoto {
+                    img {
+                        width: 100%;
+                        height: 414px;
+                        object-fit: cover;
+                    }
+                }
+                .cardFooter {
+                    height: 133px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    font-family: "Nunito";
+                    font-style: normal;
+                    font-weight: 800;
+                    font-size: 14px;
+                    line-height: 19px;
+                    padding: 0 20px;
+
+                    .figure {
+                        margin-right: 20px;
+                        position: relative;
+                        top: 3px;
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            width: 10px;
+                            background-color: black;
+                            top: calc((100% - 2px) / 2);
+
+                            left: calc((100% - 10px) / 2);
+                            height: 2px;
+                            transform: rotate(45deg);
+                            transform-origin: left;
+                        }
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            width: 10px;
+                            background-color: black;
+                            top: calc((100% - 2px) / 2);
+                            left: calc((100% - 10px) / 2);
+                            height: 2px;
+                            transform: rotate(-45deg);
+                            transform-origin: left;
+                        }
+                    }
+                }
+            }
+        }
+        .aboutUs {
+            .usLeft {
+                #titleUs {
+                    margin-bottom: 80px;
+                }
+                .usItem {
+                    display: flex;
+                    margin-top: 50px;
+                    font-family: "Nunito";
+
+                    .itemText {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        color: #4a4a4a;
+                        h1 {
+                            font-size: 29px;
+                            line-height: 40px;
+                            padding-top: 15px;
+                            font-weight: 500;
+                        }
+                        h2 {
+                            font-size: 21px;
+                            line-height: 29px;
+                            padding-bottom: 5px;
+                            font-weight: 400;
+                        }
+                    }
+                    .usleftImg {
+                        margin-right: 20px;
+                        margin-left: 10px;
+                    }
+                }
+            }
+            .usRight {
+                margin-left: 100px;
+                position: relative;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 477px;
+                    height: 431px;
+                    background-color: $maincolor;
+                    z-index: -1;
+                    top: 160px;
+                    left: -74px;
+                }
+                .usrightImg {
+                    padding-top: 100px;
+                    img {
+                        width: 425px;
+                        height: 555px;
+                        object-position: center;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+        .contactUs {
+            display: flex;
+            flex-direction: column;
+            padding: 120px 164px;
+            justify-content: center;
+            margin-top: 100px;
+
+            background-color: #fff5da;
+            .contactText {
+                font-family: "Nunito";
+                h1 {
+                    font-weight: 600;
+                    font-size: 36px;
+                    line-height: 49px;
+                    color: #323232;
+                }
+                h2 {
+                    font-size: 29px;
+                    line-height: 40px;
+                    color: #646464;
+                    font-weight: 300;
+                    margin-top: 20px;
+                }
+            }
+            .writeNumber {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 8px 12px;
+                margin-top: 30px;
+                width: 70%;
+                height: 78px;
+                border: 1px solid #000000;
+                background-color: white;
+                input {
+                    border: none;
+                    height: 100%;
+                    width: 78%;
+                    font-size: 29px;
+                }
+                button {
+                    width: 20%;
+                    height: 100%;
+                    background-color: $maincolor;
+                    border: none;
+                    outline: none;
+                    font-size: 29px;
+                    line-height: 40px;
+                    font-family: "Nunito";
+                }
+            }
+        }
+        .gallery {
+            margin-top: 120px;
+            &.container {
+                width: calc(86.1% + (1% * 2));
+            }
+            h1 {
+                font-family: "Nunito";
+                font-weight: 600;
+                font-size: 36px;
+                line-height: 49px;
+                margin-left: 1%;
+            }
+            .itemsGallery {
+                margin-top: 50px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                .itemGalery {
+                    width: 23%;
+                    background-color: #ffc839;
+                    margin: 1%;
+                    img {
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+        .swiper-container {
+            &.styleswiperFirst {
+                margin-top: 40px;
+                display: none;
+                .swiper-pagination-progressbar {
+                    span {
+                        background-color: $maincolor;
+                    }
+                }
+                .swiper-button-next {
+                    &::after {
+                        color: $maincolor;
+                    }
+                }
+                .swiper-button-prev {
+                    &::after {
+                        color: $maincolor;
+                    }
+                }
+                .swiper-wrapper {
+                    .swiper-slide {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .moreIdeas {
+            margin-top: 120px;
+            h1 {
+                font-family: "Nunito";
+                font-weight: 600;
+                font-size: 36px;
+                line-height: 49px;
+            }
+            .ideascontainer {
+                display: flex;
+                justify-content: space-between;
+                .moreLeft {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 50px;
+                    width: 50%;
+
+                    span {
+                        font-family: "Nunito";
+                        font-weight: 600;
+                        font-size: 20px;
+                        line-height: 27px;
+                        color: #606060;
+                    }
+                    button {
+                        margin-top: 40px;
+                        width: 289px;
+                        height: 61px;
+                        background-color: $maincolor;
+                        font-family: "Nunito";
+                        font-size: 29px;
+                        line-height: 40px;
+                        color: black;
+                        border: none;
+                        outline: none;
+                        filter: drop-shadow(0px 4px 22px rgba(0, 0, 0, 0.16));
+                    }
+                }
+                .moreRight {
+                    margin-top: 50px;
+                    display: flex;
+                    margin-left: 50px;
+                    width: 50%;
+
+                    .moreImg {
+                        width: 100%;
+                        &:nth-of-type(2) {
+                            margin: 0 13px;
+                        }
+                        img {
+                            object-fit: cover;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .swiper-container {
+                        &.styleswiperSecond {
+                            display: none;
+                            width: 300px;
+                            .swiper-pagination-progressbar {
+                                span {
+                                    background-color: $maincolor;
+                                }
+                            }
+                            .swiper-button-next {
+                                &::after {
+                                    color: $maincolor;
+                                }
+                            }
+                            .swiper-button-prev {
+                                &::after {
+                                    color: $maincolor;
+                                }
+                            }
+                            .swiper-wrapper {
+                                .swiper-slide {
+                                    img {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            hr {
+                margin-top: 60px;
+                border: 1px solid #d7d6d6;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                width: 86.1%;
+                height: 2px;
+                background-color: #d7d6d6;
+                margin-top: 60px;
+            }
+        }
+        .IKEA {
+            margin-top: 100px;
+            display: flex;
+            font-family: "Nunito";
+            .ikeaLeft {
+                width: 50%;
+                margin-top: 150px;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 27px;
+            }
+            .ikeaRight {
+                width: 50%;
+                margin-left: 50px;
+                h1 {
+                    font-weight: 600;
+                    font-size: 36px;
+                    line-height: 49px;
+                }
+                h2 {
+                    font-weight: 600;
+                    font-size: 24px;
+                    line-height: 33px;
+                }
+                span {
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 27px;
+                    color: #606060;
+                }
+            }
+        }
+    }
+    footer {
+        margin-top: 100px;
+        color: #cacaca;
+        font-family: "Roboto";
+        background-color: #093a7a;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        font-size: 16px;
+        line-height: 19px;
+        h2 {
+            font-family: "Roboto";
+            font-size: 20px;
+            line-height: 23px;
+            margin-bottom: 5px;
+        }
+        .container {
+           
+            .services {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                margin-bottom: 40px;
+                gap: 0 20px;
+                .itmemServise {
+                    color: #cacaca;
+                    white-space: nowrap;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .servingIn {
+                position: relative;
+                padding-top: 30px;
+                
+                .country {
+                    margin-bottom: 20px;
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+                white-space: nowrap;
+
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 1px;
+                    background-color: rgba(255, 255, 255, 0.16);
+                    top: 0;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 1px;
+                    background-color: rgba(255, 255, 255, 0.16);
+                    top: 100;
+                    margin-top: 10px;
+                }
+                h1 {
+                    font-family: "Nunito";
+                    font-weight: 600;
+                    font-size: 24px;
+                    line-height: 33px;
+                    color: #ffffff;
+                    margin-bottom: 30px;
+                }
+            }
+            .lastInfo {
+                margin-top: 70px;
+                .lastItem {
+                    font-size: 11px;
+                    line-height: 13px;
+                    white-space: nowrap;
+                }
+                .weApp {
+                    display: flex;
+
+                    justify-content: space-between;
+                    #svgLeft {
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .btnsrolltop {
+        z-index: 4;
+        position: fixed;
+        width: 50px;
+        height: 50px;
+        background-color: $maincolor;
+        right: 24px;
+        bottom: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+        img {
+            height: 70%;
+            transform: rotate(180deg);
+        }
+    }
+    .hiddenbox {
+        top: 0;
+        position: absolute;
+    }
+}
+@media (max-width: 1400px) {
+    body {
+        header {
+            .container {
+                .nav {
+                    .menu {
+                        .itemsMenu {
+                        }
+                    }
+                }
+                .headercontent {
+                    h1 {
+                    }
+                    h2 {
+                    }
+                }
+                .searchBbox {
+                    input {
+                    }
+                    button {
+                    }
+                }
+            }
+        }
+        main {
+            .cards {
+                .card {
+                    .cardPhoto {
+                        img {
+                        }
+                    }
+                    .cardFooter {
+                        .figure {
+                            &::before {
+                            }
+                            &::after {
+                            }
+                        }
+                    }
+                }
+            }
+            .aboutUs {
+                .usLeft {
+                    #titleUs {
+                    }
+                    .usItem {
+                        .itemText {
+                            h1 {
+                            }
+                            h2 {
+                            }
+                        }
+                        .usleftImg {
+                        }
+                    }
+                }
+                .usRight {
+                    &::before {
+                    }
+                    .usrightImg {
+                    }
+                }
+            }
+            .contactUs {
+                .contactText {
+                    h1 {
+                    }
+                    h2 {
+                    }
+                }
+                .writeNumber {
+                    input {
+                    }
+                    button {
+                    }
+                }
+            }
+            .gallery {
+                &.container {
+                }
+
+                h1 {
+                }
+                .itemsGallery {
+                    .itemGalery {
+                        img {
+                        }
+                    }
+                }
+            }
+            .swiper-container {
+                .swiper-wrapper {
+                    .swiper-slide {
+                        img {
+                        }
+                    }
+                }
+            }
+            .moreIdeas {
+                h1 {
+                }
+                .ideascontainer {
+                    .moreLeft {
+                        span {
+                        }
+                        button {
+                        }
+                    }
+                    .moreRight {
+                        .moreImg {
+                        }
+                        img {
+                        }
+                    }
+                }
+            }
+            hr {
+            }
+            &::after {
+            }
+
+            .IKEA {
+                .ikeaLeft {
+                }
+                .ikeaRight {
+                    h1 {
+                    }
+                    h2 {
+                    }
+                    span {
+                    }
+                }
+            }
+        }
+
+        footer {
+            h2 {
+            }
+            .container {
+                .services {
+                    .itmemServise {
+                        &:hover {
+                        }
+                    }
+                }
+                .servingIn {
+                    &::before {
+                    }
+                    &::after {
+                    }
+                    h1 {
+                    }
+                }
+                .lastInfo {
+                    .lastItem {
+                    }
+                    .weApp {
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1200px) {
+    body {
+        header {
+            .container {
+                .nav {
+                    .menu {
+                        .itemsMenu {
+                        }
+                    }
+                }
+                .headercontent {
+                    width: 70%;
+                    h1 {
+                    }
+                    h2 {
+                    }
+                }
+                .searchBbox {
+                    input {
+                    }
+                    button {
+                    }
+                }
+            }
+        }
+        main {
+            .cards {
+                .card {
+                    .cardPhoto {
+                        img {
+                        }
+                    }
+                    .cardFooter {
+                        .figure {
+                            &::before {
+                            }
+                            &::after {
+                            }
+                        }
+                    }
+                }
+            }
+            .aboutUs {
+                .usLeft {
+                    #titleUs {
+                    }
+                    .usItem {
+                        .itemText {
+                            h1 {
+                            }
+                            h2 {
+                            }
+                        }
+                        .usleftImg {
+                        }
+                    }
+                }
+                .usRight {
+                    &::before {
+                    }
+                    .usrightImg {
+                    }
+                }
+            }
+            .contactUs {
+                .contactText {
+                    h1 {
+                    }
+                    h2 {
+                    }
+                }
+                .writeNumber {
+                    input {
+                        width: 68%;
+                    }
+                    button {
+                        width: 30%;
+                    }
+                }
+            }
+            .gallery {
+                &.container {
+                    width: calc(86.1% + (1.16% * 2));
+                }
+                h1 {
+                }
+                .itemsGallery {
+                    .itemGalery {
+                        width: 31%;
+                        margin: 1.16%;
+                        img {
+                        }
+                    }
+                }
+            }
+            .moreIdeas {
+                h1 {
+                }
+                .ideascontainer {
+                    .moreLeft {
+                        justify-content: center;
+                        span {
+                        }
+                        button {
+                        }
+                    }
+                    .moreRight {
+                        .moreImg {
+                            display: none;
+                        }
+                        img {
+                        }
+                        .swiper-container {
+                            &.styleswiperSecond {
+                                display: block;
+                                .swiper-pagination-progressbar {
+                                    span {
+                                    }
+                                }
+                                .swiper-button-next {
+                                    &::after {
+                                    }
+                                }
+                                .swiper-button-prev {
+                                    &::after {
+                                    }
+                                }
+                                .swiper-wrapper {
+                                    .swiper-slide {
+                                        img {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            hr {
+            }
+            &::after {
+            }
+
+            .IKEA {
+                .ikeaLeft {
+                }
+                .ikeaRight {
+                    h1 {
+                    }
+                    h2 {
+                    }
+                    span {
+                    }
+                }
+            }
+        }
+        footer {
+            h2 {
+            }
+            .container {
+                .services {
+                    flex-wrap: wrap;
+                    justify-content: start;
+                    .itmemServise {
+                        margin-right: 30px;
+                        line-height: 35px;
+                        &:hover {
+                        }
+                    }
+                }
+                .servingIn {
+                    &::before {
+                    }
+                    &::after {
+                    }
+                    h1 {
+                    }
+                }
+                .lastInfo {
+                    flex-wrap: wrap;
+                    .lastItem {
+                    }
+                    .weApp {
+                        order: -1;
+                        width: 100%;
+                        justify-content: center;
+                        margin-bottom: 20px;
+                        #svgLeft {
+                            margin-right: 50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1050px) {
+    body {
+        header {
+            .container {
+                .nav {
+                    .menu {
+                        .itemsMenu {
+                        }
+                    }
+                }
+                .headercontent {
+                    width: 100%;
+                    h1 {
+                    }
+                    h2 {
+                    }
+                }
+                .searchBbox {
+                    input {
+                    }
+                    button {
+                    }
+                }
+            }
+        }
+        main {
+            .cards {
+                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 10px;
+                .card {
+                    margin-bottom: 70px;
+                    width: 500px;
+                    min-width: 60%;
+
+                    .cardPhoto {
+                        img {
+                        }
+                    }
+                    .cardFooter {
+                        .figure {
+                            &::before {
+                            }
+                            &::after {
+                            }
+                        }
+                    }
+                }
+            }
+            .aboutUs {
+                .usLeft {
+                    width: 100%;
+
+                    #titleUs {
+                        text-align: center;
+                        margin-bottom: 50px;
+                    }
+                    .usItem {
+                        .itemText {
+                            h1 {
+                            }
+                            h2 {
+                            }
+                        }
+                        .usleftImg {
+                        }
+                    }
+                }
+                .usRight {
+                    display: none;
+                    &::before {
+                    }
+                    .usrightImg {
+                    }
+                }
+            }
+            .contactUs {
+                .contactText {
+                    h1 {
+                    }
+                    h2 {
+                    }
+                }
+                .writeNumber {
+                    width: 80%;
+                    input {
+                    }
+                    button {
+                    }
+                }
+            }
+            .gallery {
+                &.container {
+                }
+                h1 {
+                    text-align: center;
+                }
+                .itemsGallery {
+                    .itemGalery {
+                        img {
+                        }
+                    }
+                }
+            }
+            .moreIdeas {
+                h1 {
+                    text-align: center;
+                }
+                .ideascontainer {
+                    .moreLeft {
+                        span {
+                        }
+                        button {
+                        }
+                    }
+                    .moreRight {
+                        .moreImg {
+                        }
+                        img {
+                        }
+                    }
+                }
+            }
+            hr {
+            }
+            &::after {
+            }
+
+            .IKEA {
+                .ikeaLeft {
+                }
+                .ikeaRight {
+                    h1 {
+                    }
+                    h2 {
+                    }
+                    span {
+                    }
+                }
+            }
+        }
+
+        footer {
+            h2 {
+            }
+            .container {
+                .services {
+                    .itmemServise {
+                        &:hover {
+                        }
+                    }
+                }
+                .servingIn {
+                    &::before {
+                    }
+                    &::after {
+                    }
+                    h1 {
+                    }
+                }
+                .lastInfo {
+                    .lastItem {
+                    }
+                    .weApp {
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 950px) {
+    body {
+        header {
+            .container {
+                .nav {
+                    .menu {
+                        .itemsMenu {
+                        }
+                    }
+                }
+                .headercontent {
+                    width: 100%;
+                    h1 {
+                    }
+                    h2 {
+                    }
+                }
+                .searchBbox {
+                    input {
+                    }
+                    button {
+                    }
+                }
+            }
+        }
+        main {
+            .cards {
+                .card {
+                    .cardPhoto {
+                        img {
+                        }
+                    }
+                    .cardFooter {
+                        .figure {
+                            &::before {
+                            }
+                            &::after {
+                            }
+                        }
+                    }
+                }
+            }
+            .aboutUs {
+                .usLeft {
+                    #titleUs {
+                    }
+                    .usItem {
+                        .itemText {
+                            h1 {
+                            }
+                            h2 {
+                            }
+                        }
+                        .usleftImg {
+                        }
+                    }
+                }
+                .usRight {
+                    &::before {
+                    }
+                    .usrightImg {
+                    }
+                }
+            }
+            .contactUs {
+                padding: 30px 30px;
+                .contactText {
+                    h1 {
+                    }
+                    h2 {
+                    }
+                }
+                .writeNumber {
+                    input {
+                    }
+                    button {
+                    }
+                }
+            }
+            .gallery {
+                &.container {
+                }
+
+                h1 {
+                }
+                .itemsGallery {
+                    display: none;
+
+                    .itemGalery {
+                        img {
+                        }
+                    }
+                }
+            }
+            .swiper-container {
+                &.styleswiperFirst {
+                    display: block;
+                }
+                .swiper-wrapper {
+                    .swiper-slide {
+                        img {
+                        }
+                    }
+                }
+            }
+            .moreIdeas {
+                h1 {
+                }
+                .ideascontainer {
+                    .moreLeft {
+                        span {
+                        }
+                        button {
+                        }
+                    }
+                    .moreRight {
+                        .moreImg {
+                        }
+                        img {
+                        }
+                    }
+                }
+            }
+            hr {
+            }
+            &::after {
+            }
+
+            .IKEA {
+                .ikeaLeft {
+                }
+                .ikeaRight {
+                    h1 {
+                    }
+                    h2 {
+                    }
+                    span {
+                    }
+                }
+            }
+        }
+
+        footer {
+            h2 {
+            }
+            .container {
+                .services {
+                    .itmemServise {
+                        &:hover {
+                        }
+                    }
+                }
+                .servingIn {
+                    &::before {
+                    }
+                    &::after {
+                    }
+                    h1 {
+                    }
+                }
+                .lastInfo {
+                    .lastItem {
+                    }
+                    .weApp {
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 850px) {
+    body {
+        &.lock {
+            overflow: hidden;
+        }
+        header {
+            .container {
+                .nav {
+                    .menu {
+                        display: none;
+                        .itemsMenu {
+                        }
+                    }
+                    .burger {
+                        display: block;
+                        position: relative;
+                        width: 30px;
+                        height: 20px;
+                        z-index: 99;
+
+                        span {
+                            position: absolute;
+                            background-color: #fff;
+                            width: 100%;
+                            height: 2px;
+                            top: 9px;
+                            left: 0;
+                            transition: 0.3s;
+                        }
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            height: 2px;
+                            background-color: #fff;
+                            left: 0;
+                            top: 0;
+                            transition: 0.3s;
+                        }
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            height: 2px;
+                            background-color: #fff;
+                            left: 0;
+                            bottom: 0;
+                            transition: 0.3s;
+                        }
+                        &.active {
+                            &::before {
+                                transform: rotate(45deg);
+                                top: 9px;
+                            }
+                            &::after {
+                                transform: rotate(-45deg);
+                                bottom: 9px;
+                            }
+                            span {
+                                transform: scale(0);
+                            }
+                        }
+                    }
+                    .burgerMenu {
+                        position: fixed;
+                        top: -100%;
+                        left: 0;
+                        display: flex;
+                        width: 100vw;
+                        height: 100vh;
+                        font-family: "Nunito";
+                        background-color: #0053c0;
+                        z-index: 5;
+                        flex-direction: column;
+                        transition: 0.3s;
+                        overflow: auto;
+                        .itemsMenu {
+                            color: white;
+                            font-size: 25px;
+                            padding: 10px 20px;
+                            white-space: nowrap;
+                            transition: 0.5s;
+                            &:first-child {
+                                margin-top: 100px;
+                            }
+                            transform: translateY(-400px);
+                        }
+                        &.active {
+                            top: 0;
+                            .itemsMenu {
+                                &:nth-of-type(1) {
+                                    transform: translateY(0px);
+                                    transition-delay: 0.1s;
+                                }
+                                &:nth-of-type(2) {
+                                    transform: translateY(0px);
+                                    transition-delay: 0.2s;
+                                }
+                                &:nth-of-type(3) {
+                                    transform: translateY(0px);
+                                    transition-delay: 0.3s;
+                                }
+                                &:nth-of-type(4) {
+                                    transform: translateY(0px);
+                                    transition-delay: 0.4s;
+                                }
+                            }
+                        }
+                    }
+                }
+                .headercontent {
+                    h1 {
+                    }
+                    h2 {
+                    }
+                }
+                .searchBbox {
+                    input {
+                    }
+                    button {
+                    }
+                }
+            }
+        }
+        main {
+            .cards {
+                .card {
+                    .cardPhoto {
+                        img {
+                        }
+                    }
+                    .cardFooter {
+                        .figure {
+                            &::before {
+                            }
+                            &::after {
+                            }
+                        }
+                    }
+                }
+            }
+            .aboutUs {
+                .usLeft {
+                    #titleUs {
+                    }
+                    .usItem {
+                        .itemText {
+                            h1 {
+                            }
+                            h2 {
+                            }
+                        }
+                        .usleftImg {
+                        }
+                    }
+                }
+                .usRight {
+                    &::before {
+                    }
+                    .usrightImg {
+                    }
+                }
+            }
+            .contactUs {
+                padding: 30px 30px;
+                .contactText {
+                    h1 {
+                    }
+                    h2 {
+                    }
+                }
+                .writeNumber {
+                    input {
+                    }
+                    button {
+                    }
+                }
+            }
+            .gallery {
+                &.container {
+                }
+                h1 {
+                }
+                .itemsGallery {
+                    .itemGalery {
+                        img {
+                        }
+                    }
+                }
+            }
+            .moreIdeas {
+                h1 {
+                }
+                .ideascontainer {
+                    .moreLeft {
+                        span {
+                        }
+                        button {
+                        }
+                    }
+                    .moreRight {
+                        .moreImg {
+                        }
+                        img {
+                        }
+                    }
+                }
+            }
+            hr {
+            }
+            &::after {
+            }
+
+            .IKEA {
+                .ikeaLeft {
+                }
+                .ikeaRight {
+                    h1 {
+                    }
+                    h2 {
+                    }
+                    span {
+                    }
+                }
+            }
+        }
+
+        footer {
+            h2 {
+            }
+            .container {
+                .services {
+                    .itmemServise {
+                        &:hover {
+                        }
+                    }
+                }
+                .servingIn {
+                    &::before {
+                    }
+                    &::after {
+                    }
+                    h1 {
+                    }
+                }
+                .lastInfo {
+                    .lastItem {
+                    }
+                    .weApp {
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 830px) {
+    body {
+        header {
+            .container {
+                .nav {
+                    .menu {
+                        .itemsMenu {
+                        }
+                    }
+                }
+                .headercontent {
+                    margin-top: 30px;
+
+                    h1 {
+                    }
+                    h2 {
+                    }
+                }
+                .searchBbox {
+                    input {
+                    }
+                    button {
+                    }
+                }
+            }
+        }
+        main {
+            .cards {
+                .card {
+                    .cardPhoto {
+                        img {
+                        }
+                    }
+                    .cardFooter {
+                        .figure {
+                            &::before {
+                            }
+                            &::after {
+                            }
+                        }
+                    }
+                }
+            }
+            .aboutUs {
+                .usLeft {
+                    #titleUs {
+                    }
+                    .usItem {
+                        .itemText {
+                            h1 {
+                            }
+                            h2 {
+                            }
+                        }
+                        .usleftImg {
+                        }
+                    }
+                }
+                .usRight {
+                    &::before {
+                    }
+                    .usrightImg {
+                    }
+                }
+            }
+            .contactUs {
+                .contactText {
+                    h1 {
+                    }
+                    h2 {
+                    }
+                }
+                .writeNumber {
+                    input {
+                        width: 68%;
+                    }
+                    button {
+                        width: 30%;
+                    }
+                }
+            }
+            .gallery {
+                &.container {
+                }
+                h1 {
+                }
+                .itemsGallery {
+                    .itemGalery {
+                        img {
+                        }
+                    }
+                }
+            }
+            .moreIdeas {
+                h1 {
+                }
+                .ideascontainer {
+                    flex-wrap: wrap;
+                    .moreLeft {
+                        width: 100%;
+                        span {
+                        }
+                        button {
+                        }
+                    }
+                    .moreRight {
+                        width: 100%;
+                        margin: 50px 0;
+                        .moreImg {
+                            display: flex;
+                        }
+                        img {
+                        }
+                        .swiper-container {
+                            &.styleswiperSecond {
+                                display: none;
+                                .swiper-pagination-progressbar {
+                                    span {
+                                    }
+                                }
+                                .swiper-button-next {
+                                    &::after {
+                                    }
+                                }
+                                .swiper-button-prev {
+                                    &::after {
+                                    }
+                                }
+                                .swiper-wrapper {
+                                    .swiper-slide {
+                                        img {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            hr {
+            }
+            &::after {
+            }
+
+            .IKEA {
+                .ikeaLeft {
+                }
+                .ikeaRight {
+                    h1 {
+                    }
+                    h2 {
+                    }
+                    span {
+                    }
+                }
+            }
+        }
+        footer {
+            padding-bottom: 40px;
+            h2 {
+            }
+            .container {
+                .services {
+                    .itmemServise {
+                        &:hover {
+                        }
+                    }
+                }
+                .servingIn {
+                    &::before {
+                    }
+                    &::after {
+                    }
+                    h1 {
+                    }
+                }
+                .lastInfo {
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    #footerLogo {
+                        margin-bottom: 10px;
+                    }
+                    .lastItem {
+                        margin-bottom: 10px;
+                    }
+                    .weApp {
+                        #svgLeft {
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 700px) {
+    body {
+        header {
+            .container {
+                .nav {
+                    .menu {
+                        .itemsMenu {
+                        }
+                    }
+                }
+                .headercontent {
+                    h1 {
+                        font-size: 50px;
+                        line-height: 60px;
+                    }
+                    h2 {
+                    }
+                }
+                .searchBbox {
+                    input {
+                    }
+                    button {
+                    }
+                }
+            }
+        }
+        main {
+            .cards {
+                .card {
+                    .cardPhoto {
+                        img {
+                        }
+                    }
+                    .cardFooter {
+                        .figure {
+                            &::before {
+                            }
+                            &::after {
+                            }
+                        }
+                    }
+                }
+            }
+            .aboutUs {
+                .usLeft {
+                    #titleUs {
+                    }
+                    .usItem {
+                        .itemText {
+                            h1 {
+                            }
+                            h2 {
+                            }
+                        }
+                        .usleftImg {
+                        }
+                    }
+                }
+                .usRight {
+                    &::before {
+                    }
+                    .usrightImg {
+                    }
+                }
+            }
+            .contactUs {
+                .contactText {
+                    h1 {
+                    }
+                    h2 {
+                    }
+                }
+                .writeNumber {
+                    input {
+                    }
+                    button {
+                    }
+                }
+            }
+            .gallery {
+                &.container {
+                }
+                h1 {
+                }
+                .itemsGallery {
+                    .itemGalery {
+                        img {
+                        }
+                    }
+                }
+            }
+            .moreIdeas {
+                h1 {
+                }
+                .ideascontainer {
+                    .moreLeft {
+                        span {
+                        }
+                        button {
+                        }
+                    }
+                    .moreRight {
+                        .moreImg {
+                        }
+                        img {
+                        }
+                    }
+                }
+            }
+            hr {
+            }
+            &::after {
+            }
+
+            .IKEA {
+                flex-wrap: wrap;
+                .ikeaLeft {
+                    width: 100%;
+                    margin-top: 50px;
+                }
+                .ikeaRight {
+                    margin: 0;
+                    width: 100%;
+                    order: -1;
+                    h1 {
+                    }
+                    h2 {
+                    }
+                    span {
+                    }
+                }
+            }
+        }
+
+        footer {
+            margin-top: 50px;
+            h2 {
+            }
+            .container {
+                .services {
+                    .itmemServise {
+                        &:hover {
+                        }
+                    }
+                }
+                .servingIn {
+                    .country{
+                        justify-items: center;
+                    }
+                    &::before {
+                    }
+                    &::after {
+                    }
+                    h2 {
+                        text-align: center;
+                    }
+                }
+                .lastInfo {
+                    .lastItem {
+                    }
+                    .weApp {
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 600px) {
+    body {
+        header {
+            .container {
+                .nav {
+                    .menu {
+                        .itemsMenu {
+                        }
+                    }
+                }
+                .headercontent {
+                    h1 {
+                    }
+                    h2 {
+                    }
+                }
+                .searchBbox {
+                    input {
+                    }
+                    button {
+                    }
+                }
+            }
+        }
+        main {
+            .cards {
+                .card {
+                    width: 100%;
+                    .cardPhoto {
+                        img {
+                        }
+                    }
+                    .cardFooter {
+                        .figure {
+                            &::before {
+                            }
+                            &::after {
+                            }
+                        }
+                    }
+                }
+            }
+            .aboutUs {
+                .usLeft {
+                    #titleUs {
+                    }
+                    .usItem {
+                        .itemText {
+                            h1 {
+                            }
+                            h2 {
+                            }
+                        }
+                        .usleftImg {
+                        }
+                    }
+                }
+                .usRight {
+                    &::before {
+                    }
+                    .usrightImg {
+                    }
+                }
+            }
+            .contactUs {
+                .contactText {
+                    text-align: center;
+                    h1 {
+                        font-size: 30px;
+                    }
+                    h2 {
+                        font-size: 25px;
+                    }
+                }
+                .writeNumber {
+                    width: 100%;
+                    input {
+                        font-size: 18px;
+                    }
+                    button {
+                        font-size: 18px;
+                    }
+                }
+            }
+            .gallery {
+                &.container {
+                }
+
+                h1 {
+                }
+                .itemsGallery {
+                    .itemGalery {
+                        img {
+                        }
+                    }
+                }
+            }
+            .swiper-container {
+                width: 70%;
+                .swiper-wrapper {
+                    .swiper-slide {
+                        img {
+                        }
+                    }
+                }
+            }
+            .moreIdeas {
+                h1 {
+                }
+                .ideascontainer {
+                    .moreLeft {
+                        span {
+                        }
+                        button {
+                        }
+                    }
+                    .moreRight {
+                        .moreImg {
+                        }
+                        img {
+                        }
+                    }
+                }
+            }
+            hr {
+            }
+            &::after {
+            }
+
+            .IKEA {
+                .ikeaLeft {
+                }
+                .ikeaRight {
+                    h1 {
+                    }
+                    h2 {
+                    }
+                    span {
+                    }
+                }
+            }
+        }
+
+        footer {
+            h2 {
+            }
+            .container {
+                .services {
+                    .itmemServise {
+                        &:hover {
+                        }
+                    }
+                }
+                .servingIn {
+                    &::before {
+                    }
+                    &::after {
+                    }
+                    h1 {
+                    }
+                }
+                .lastInfo {
+                    .lastItem {
+                    }
+                    .weApp {
+                        #svgLeft {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 400px) {
+    body {
+        header {
+            .container {
+                .nav {
+                    .menu {
+                        .itemsMenu {
+                        }
+                    }
+                }
+                .headercontent {
+                    h1 {
+                        font-size: 40px;
+                        line-height: 50px;
+                    }
+                    h2 {
+                    }
+                }
+                .searchBbox {
+                    input {
+                        font-size: 18px;
+                    }
+                    button {
+                        font-size: 18px;
+                        padding: 15px 45px;
+                        span {
+                            &::after {
+                                left: -26px;
+                                top: -12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        main {
+            .cards {
+                .card {
+                    .cardPhoto {
+                        img {
+                        }
+                    }
+                    .cardFooter {
+                        height: 70px;
+                        .figure {
+                            &::before {
+                            }
+                            &::after {
+                            }
+                        }
+                    }
+                }
+            }
+            .aboutUs {
+                .usLeft {
+                    #titleUs {
+                        margin-bottom: 0px;
+                    }
+                    .usItem {
+                        margin-top: 20px;
+                        flex-direction: column;
+                        align-items: center;
+                        .itemText {
+                            text-align: center;
+                            h1 {
+                            }
+                            h2 {
+                            }
+                        }
+                        .usleftImg {
+                        }
+                    }
+                }
+                .usRight {
+                    &::before {
+                    }
+                    .usrightImg {
+                    }
+                }
+            }
+            .contactUs {
+                .contactText {
+                    h1 {
+                        font-size: 25px;
+                    }
+                    h2 {
+                        font-size: 20px;
+                    }
+                }
+                .writeNumber {
+                    input {
+                    }
+                    button {
+                    }
+                }
+            }
+            .gallery {
+                margin-top: 80px;
+                &.container {
+                }
+
+                h1 {
+                }
+                .itemsGallery {
+                    .itemGalery {
+                        img {
+                        }
+                    }
+                }
+            }
+            .swiper-container {
+                .swiper-wrapper {
+                    .swiper-slide {
+                        img {
+                        }
+                    }
+                }
+            }
+            .moreIdeas {
+                margin-top: 80px;
+                h1 {
+                }
+                .ideascontainer {
+                    .moreLeft {
+                        align-items: center;
+                        span {
+                        }
+                        button {
+                            width: 80%;
+                            font-size: 25px;
+                        }
+                    }
+                    .moreRight {
+                        margin-bottom: 0;
+                        .moreImg {
+                        }
+                        img {
+                        }
+                    }
+                }
+            }
+            hr {
+            }
+            &::after {
+            }
+
+            .IKEA {
+                .ikeaLeft {
+                }
+                .ikeaRight {
+                    h1 {
+                    }
+                    h2 {
+                    }
+                    span {
+                    }
+                }
+            }
+        }
+
+        footer {
+            h2 {
+            }
+            .container {
+                .services {
+                    .itmemServise {
+                        &:hover {
+                        }
+                    }
+                }
+                .servingIn {
+                    &::before {
+                    }
+                    &::after {
+                    }
+                    h1 {
+                    }
+                }
+                .lastInfo {
+                    .lastItem {
+                    }
+                    .weApp {
+                    }
+                }
+            }
+        }
+    }
+}

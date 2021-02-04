@@ -1,0 +1,1237 @@
+* {
+  outline: none;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-decoration: none;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container {
+  width: 86.1%;
+  margin: 0 auto;
+}
+
+.footerItem {
+  line-height: 35px;
+  color: #cacaca;
+}
+
+.footerItem:hover {
+  text-decoration: underline;
+}
+
+body header {
+  background-image: linear-gradient(0.87deg, rgba(2, 55, 135, 0.9) 0.69%, rgba(81, 38, 174, 0.4736) 100.48%, rgba(38, 92, 174, 0.0102906) 100.49%, rgba(195, 195, 196, 0.00520833) 100.5%, #76a6ef 100.51%), url(/REUI/PrepareUI/house.png);
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  background-position: center center, center top;
+  padding-bottom: 73px;
+}
+
+body header .container .nav {
+  padding-top: 42px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body header .container .nav .menu {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 530px;
+}
+
+body header .container .nav .menu .nav_line {
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+body header .container .nav .menu .itemsMenu {
+  font-family: "Roboto";
+  font-weight: 300;
+  color: white;
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+body header .container .nav .burger {
+  display: none;
+}
+
+body header .container .nav .burgerMenu {
+  display: none;
+}
+
+body header .container .headercontent {
+  font-family: "Nunito";
+  width: 60%;
+  margin-top: 190px;
+  color: white;
+}
+
+body header .container .headercontent h1 {
+  font-size: 60px;
+  line-height: 82px;
+  opacity: 0;
+  -webkit-animation-name: moveline;
+          animation-name: moveline;
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+body header .container .headercontent h2 {
+  margin-top: 30px;
+  font-size: 29px;
+  line-height: 40px;
+  font-weight: 200;
+  opacity: 0;
+  -webkit-animation-name: moveline;
+          animation-name: moveline;
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms;
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes moveline {
+  0% {
+    -webkit-transform: translate(-850px);
+            transform: translate(-850px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate(0px);
+            transform: translate(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes moveline {
+  0% {
+    -webkit-transform: translate(-850px);
+            transform: translate(-850px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate(0px);
+            transform: translate(0px);
+    opacity: 1;
+  }
+}
+
+body header .container .searchBbox {
+  margin-top: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #ffffff;
+  -webkit-box-shadow: 6px 9px 59px 3px rgba(0, 0, 0, 0.01);
+          box-shadow: 6px 9px 59px 3px rgba(0, 0, 0, 0.01);
+  padding: 8px 12px;
+}
+
+body header .container .searchBbox input {
+  border: 0;
+  width: 100%;
+  font-family: "Roboto";
+  font-size: 23px;
+  padding: 8px;
+}
+
+body header .container .searchBbox button {
+  padding: 30px 80px;
+  background-color: #ffb700;
+  outline: none;
+  border: none;
+  color: black;
+  font-size: 23px;
+  line-height: 27px;
+  font-family: "Roboto";
+  position: relative;
+  overflow: hidden;
+}
+
+body header .container .searchBbox button span {
+  position: relative;
+}
+
+body header .container .searchBbox button span::after {
+  position: absolute;
+  content: "Search";
+  top: -11px;
+  left: -31px;
+  z-index: 2;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+body header .container .searchBbox button::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: #ffc839;
+  top: 0px;
+  left: 0px;
+  -webkit-transform: rotate(20deg) translate(-27px, 41px);
+          transform: rotate(20deg) translate(-27px, 41px);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+body header .container .searchBbox button::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: #ffc839;
+  top: 0px;
+  left: 0px;
+  -webkit-transform: rotate(20deg) translate(-27px, -158px);
+          transform: rotate(20deg) translate(-27px, -158px);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+body header .container .searchBbox button:hover::after {
+  -webkit-transform: rotate(20deg) translate(-27px, -210px);
+          transform: rotate(20deg) translate(-27px, -210px);
+}
+
+body header .container .searchBbox button:hover::before {
+  -webkit-transform: rotate(20deg) translate(-27px, 95px);
+          transform: rotate(20deg) translate(-27px, 95px);
+}
+
+body header .container .searchBbox button:hover span::after {
+  color: white;
+}
+
+body main .cards {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+body main .cards .card {
+  -webkit-box-shadow: 0px 30px 30px -15px rgba(171, 124, 0, 0.29);
+          box-shadow: 0px 30px 30px -15px rgba(171, 124, 0, 0.29);
+  width: 32%;
+  background-color: #ffc839;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  position: relative;
+}
+
+body main .cards .card:hover {
+  -webkit-transform: translate(-5px, -10px);
+          transform: translate(-5px, -10px);
+}
+
+body main .cards .card .cardPhoto img {
+  width: 100%;
+  height: 414px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body main .cards .card .cardFooter {
+  height: 133px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 19px;
+  padding: 0 20px;
+}
+
+body main .cards .card .cardFooter .figure {
+  margin-right: 20px;
+  position: relative;
+  top: 3px;
+}
+
+body main .cards .card .cardFooter .figure::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  background-color: black;
+  top: calc((100% - 2px) / 2);
+  left: calc((100% - 10px) / 2);
+  height: 2px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+body main .cards .card .cardFooter .figure::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  background-color: black;
+  top: calc((100% - 2px) / 2);
+  left: calc((100% - 10px) / 2);
+  height: 2px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+body main .aboutUs .usLeft #titleUs {
+  margin-bottom: 80px;
+}
+
+body main .aboutUs .usLeft .usItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 50px;
+  font-family: "Nunito";
+}
+
+body main .aboutUs .usLeft .usItem .itemText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #4a4a4a;
+}
+
+body main .aboutUs .usLeft .usItem .itemText h1 {
+  font-size: 29px;
+  line-height: 40px;
+  padding-top: 15px;
+  font-weight: 500;
+}
+
+body main .aboutUs .usLeft .usItem .itemText h2 {
+  font-size: 21px;
+  line-height: 29px;
+  padding-bottom: 5px;
+  font-weight: 400;
+}
+
+body main .aboutUs .usLeft .usItem .usleftImg {
+  margin-right: 20px;
+  margin-left: 10px;
+}
+
+body main .aboutUs .usRight {
+  margin-left: 100px;
+  position: relative;
+}
+
+body main .aboutUs .usRight::before {
+  content: "";
+  position: absolute;
+  width: 477px;
+  height: 431px;
+  background-color: #ffc839;
+  z-index: -1;
+  top: 160px;
+  left: -74px;
+}
+
+body main .aboutUs .usRight .usrightImg {
+  padding-top: 100px;
+}
+
+body main .aboutUs .usRight .usrightImg img {
+  width: 425px;
+  height: 555px;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body main .contactUs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 120px 164px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 100px;
+  background-color: #fff5da;
+}
+
+body main .contactUs .contactText {
+  font-family: "Nunito";
+}
+
+body main .contactUs .contactText h1 {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 49px;
+  color: #323232;
+}
+
+body main .contactUs .contactText h2 {
+  font-size: 29px;
+  line-height: 40px;
+  color: #646464;
+  font-weight: 300;
+  margin-top: 20px;
+}
+
+body main .contactUs .writeNumber {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 8px 12px;
+  margin-top: 30px;
+  width: 70%;
+  height: 78px;
+  border: 1px solid #000000;
+  background-color: white;
+}
+
+body main .contactUs .writeNumber input {
+  border: none;
+  height: 100%;
+  width: 78%;
+  font-size: 29px;
+}
+
+body main .contactUs .writeNumber button {
+  width: 20%;
+  height: 100%;
+  background-color: #ffc839;
+  border: none;
+  outline: none;
+  font-size: 29px;
+  line-height: 40px;
+  font-family: "Nunito";
+}
+
+body main .gallery {
+  margin-top: 120px;
+}
+
+body main .gallery.container {
+  width: calc(86.1% + (1% * 2));
+}
+
+body main .gallery h1 {
+  font-family: "Nunito";
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 49px;
+  margin-left: 1%;
+}
+
+body main .gallery .itemsGallery {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+body main .gallery .itemsGallery .itemGalery {
+  width: 23%;
+  background-color: #ffc839;
+  margin: 1%;
+}
+
+body main .gallery .itemsGallery .itemGalery img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+body main .swiper-container.styleswiperFirst {
+  margin-top: 40px;
+  display: none;
+}
+
+body main .swiper-container.styleswiperFirst .swiper-pagination-progressbar span {
+  background-color: #ffc839;
+}
+
+body main .swiper-container.styleswiperFirst .swiper-button-next::after {
+  color: #ffc839;
+}
+
+body main .swiper-container.styleswiperFirst .swiper-button-prev::after {
+  color: #ffc839;
+}
+
+body main .swiper-container.styleswiperFirst .swiper-wrapper .swiper-slide img {
+  width: 100%;
+}
+
+body main .moreIdeas {
+  margin-top: 120px;
+}
+
+body main .moreIdeas h1 {
+  font-family: "Nunito";
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 49px;
+}
+
+body main .moreIdeas .ideascontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body main .moreIdeas .ideascontainer .moreLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 50px;
+  width: 50%;
+}
+
+body main .moreIdeas .ideascontainer .moreLeft span {
+  font-family: "Nunito";
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  color: #606060;
+}
+
+body main .moreIdeas .ideascontainer .moreLeft button {
+  margin-top: 40px;
+  width: 289px;
+  height: 61px;
+  background-color: #ffc839;
+  font-family: "Nunito";
+  font-size: 29px;
+  line-height: 40px;
+  color: black;
+  border: none;
+  outline: none;
+  -webkit-filter: drop-shadow(0px 4px 22px rgba(0, 0, 0, 0.16));
+          filter: drop-shadow(0px 4px 22px rgba(0, 0, 0, 0.16));
+}
+
+body main .moreIdeas .ideascontainer .moreRight {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 50px;
+  width: 50%;
+}
+
+body main .moreIdeas .ideascontainer .moreRight .moreImg {
+  width: 100%;
+}
+
+body main .moreIdeas .ideascontainer .moreRight .moreImg:nth-of-type(2) {
+  margin: 0 13px;
+}
+
+body main .moreIdeas .ideascontainer .moreRight .moreImg img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+body main .moreIdeas .ideascontainer .moreRight .swiper-container.styleswiperSecond {
+  display: none;
+  width: 300px;
+}
+
+body main .moreIdeas .ideascontainer .moreRight .swiper-container.styleswiperSecond .swiper-pagination-progressbar span {
+  background-color: #ffc839;
+}
+
+body main .moreIdeas .ideascontainer .moreRight .swiper-container.styleswiperSecond .swiper-button-next::after {
+  color: #ffc839;
+}
+
+body main .moreIdeas .ideascontainer .moreRight .swiper-container.styleswiperSecond .swiper-button-prev::after {
+  color: #ffc839;
+}
+
+body main .moreIdeas .ideascontainer .moreRight .swiper-container.styleswiperSecond .swiper-wrapper .swiper-slide img {
+  width: 100%;
+}
+
+body main .moreIdeas hr {
+  margin-top: 60px;
+  border: 1px solid #d7d6d6;
+}
+
+body main .moreIdeas::after {
+  content: "";
+  position: absolute;
+  width: 86.1%;
+  height: 2px;
+  background-color: #d7d6d6;
+  margin-top: 60px;
+}
+
+body main .IKEA {
+  margin-top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Nunito";
+}
+
+body main .IKEA .ikeaLeft {
+  width: 50%;
+  margin-top: 150px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+body main .IKEA .ikeaRight {
+  width: 50%;
+  margin-left: 50px;
+}
+
+body main .IKEA .ikeaRight h1 {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 49px;
+}
+
+body main .IKEA .ikeaRight h2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+}
+
+body main .IKEA .ikeaRight span {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  color: #606060;
+}
+
+body footer {
+  margin-top: 100px;
+  color: #cacaca;
+  font-family: "Roboto";
+  background-color: #093a7a;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+body footer h2 {
+  font-family: "Roboto";
+  font-size: 20px;
+  line-height: 23px;
+  margin-bottom: 5px;
+}
+
+body footer .container .services {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(120px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  margin-bottom: 40px;
+  gap: 0 20px;
+}
+
+body footer .container .services .itmemServise {
+  color: #cacaca;
+  white-space: nowrap;
+}
+
+body footer .container .services .itmemServise:hover {
+  text-decoration: underline;
+}
+
+body footer .container .servingIn {
+  position: relative;
+  padding-top: 30px;
+}
+
+body footer .container .servingIn .country {
+  margin-bottom: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(115px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+  white-space: nowrap;
+}
+
+body footer .container .servingIn::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.16);
+  top: 0;
+}
+
+body footer .container .servingIn::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.16);
+  top: 100;
+  margin-top: 10px;
+}
+
+body footer .container .servingIn h1 {
+  font-family: "Nunito";
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+body footer .container .lastInfo {
+  margin-top: 70px;
+}
+
+body footer .container .lastInfo .lastItem {
+  font-size: 11px;
+  line-height: 13px;
+  white-space: nowrap;
+}
+
+body footer .container .lastInfo .weApp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body footer .container .lastInfo .weApp #svgLeft {
+  margin-right: 20px;
+}
+
+body .btnsrolltop {
+  z-index: 4;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background-color: #ffc839;
+  right: 24px;
+  bottom: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+body .btnsrolltop img {
+  height: 70%;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+body .hiddenbox {
+  top: 0;
+  position: absolute;
+}
+
+@media (max-width: 1200px) {
+  body header .container .headercontent {
+    width: 70%;
+  }
+  body main .contactUs .writeNumber input {
+    width: 68%;
+  }
+  body main .contactUs .writeNumber button {
+    width: 30%;
+  }
+  body main .gallery.container {
+    width: calc(86.1% + (1.16% * 2));
+  }
+  body main .gallery .itemsGallery .itemGalery {
+    width: 31%;
+    margin: 1.16%;
+  }
+  body main .moreIdeas .ideascontainer .moreLeft {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body main .moreIdeas .ideascontainer .moreRight .moreImg {
+    display: none;
+  }
+  body main .moreIdeas .ideascontainer .moreRight .swiper-container.styleswiperSecond {
+    display: block;
+  }
+  body footer .container .services {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+  body footer .container .services .itmemServise {
+    margin-right: 30px;
+    line-height: 35px;
+  }
+  body footer .container .lastInfo {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body footer .container .lastInfo .weApp {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 20px;
+  }
+  body footer .container .lastInfo .weApp #svgLeft {
+    margin-right: 50px;
+  }
+}
+
+@media (max-width: 1050px) {
+  body header .container .headercontent {
+    width: 100%;
+  }
+  body main .cards {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 10px;
+  }
+  body main .cards .card {
+    margin-bottom: 70px;
+    width: 500px;
+    min-width: 60%;
+  }
+  body main .aboutUs .usLeft {
+    width: 100%;
+  }
+  body main .aboutUs .usLeft #titleUs {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  body main .aboutUs .usRight {
+    display: none;
+  }
+  body main .contactUs .writeNumber {
+    width: 80%;
+  }
+  body main .gallery h1 {
+    text-align: center;
+  }
+  body main .moreIdeas h1 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 950px) {
+  body header .container .headercontent {
+    width: 100%;
+  }
+  body main .contactUs {
+    padding: 30px 30px;
+  }
+  body main .gallery .itemsGallery {
+    display: none;
+  }
+  body main .swiper-container.styleswiperFirst {
+    display: block;
+  }
+}
+
+@media (max-width: 850px) {
+  body.lock {
+    overflow: hidden;
+  }
+  body header .container .nav .menu {
+    display: none;
+  }
+  body header .container .nav .burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    z-index: 99;
+  }
+  body header .container .nav .burger span {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+    left: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  body header .container .nav .burger::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    left: 0;
+    top: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  body header .container .nav .burger::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    left: 0;
+    bottom: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  body header .container .nav .burger.active::before {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    top: 9px;
+  }
+  body header .container .nav .burger.active::after {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    bottom: 9px;
+  }
+  body header .container .nav .burger.active span {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  body header .container .nav .burgerMenu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    font-family: "Nunito";
+    background-color: #0053c0;
+    z-index: 5;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    overflow: auto;
+  }
+  body header .container .nav .burgerMenu .itemsMenu {
+    color: white;
+    font-size: 25px;
+    padding: 10px 20px;
+    white-space: nowrap;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    -webkit-transform: translateY(-400px);
+            transform: translateY(-400px);
+  }
+  body header .container .nav .burgerMenu .itemsMenu:first-child {
+    margin-top: 100px;
+  }
+  body header .container .nav .burgerMenu.active {
+    top: 0;
+  }
+  body header .container .nav .burgerMenu.active .itemsMenu:nth-of-type(1) {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-transition-delay: 0.1s;
+            transition-delay: 0.1s;
+  }
+  body header .container .nav .burgerMenu.active .itemsMenu:nth-of-type(2) {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-transition-delay: 0.2s;
+            transition-delay: 0.2s;
+  }
+  body header .container .nav .burgerMenu.active .itemsMenu:nth-of-type(3) {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-transition-delay: 0.3s;
+            transition-delay: 0.3s;
+  }
+  body header .container .nav .burgerMenu.active .itemsMenu:nth-of-type(4) {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-transition-delay: 0.4s;
+            transition-delay: 0.4s;
+  }
+  body main .contactUs {
+    padding: 30px 30px;
+  }
+}
+
+@media (max-width: 830px) {
+  body header .container .headercontent {
+    margin-top: 30px;
+  }
+  body main .contactUs .writeNumber input {
+    width: 68%;
+  }
+  body main .contactUs .writeNumber button {
+    width: 30%;
+  }
+  body main .moreIdeas .ideascontainer {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body main .moreIdeas .ideascontainer .moreLeft {
+    width: 100%;
+  }
+  body main .moreIdeas .ideascontainer .moreRight {
+    width: 100%;
+    margin: 50px 0;
+  }
+  body main .moreIdeas .ideascontainer .moreRight .moreImg {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  body main .moreIdeas .ideascontainer .moreRight .swiper-container.styleswiperSecond {
+    display: none;
+  }
+  body footer {
+    padding-bottom: 40px;
+  }
+  body footer .container .lastInfo {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body footer .container .lastInfo #footerLogo {
+    margin-bottom: 10px;
+  }
+  body footer .container .lastInfo .lastItem {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  body header .container .headercontent h1 {
+    font-size: 50px;
+    line-height: 60px;
+  }
+  body main .IKEA {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body main .IKEA .ikeaLeft {
+    width: 100%;
+    margin-top: 50px;
+  }
+  body main .IKEA .ikeaRight {
+    margin: 0;
+    width: 100%;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+  body footer {
+    margin-top: 50px;
+  }
+  body footer .container .servingIn .country {
+    justify-items: center;
+  }
+  body footer .container .servingIn h2 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  body main .cards .card {
+    width: 100%;
+  }
+  body main .contactUs .contactText {
+    text-align: center;
+  }
+  body main .contactUs .contactText h1 {
+    font-size: 30px;
+  }
+  body main .contactUs .contactText h2 {
+    font-size: 25px;
+  }
+  body main .contactUs .writeNumber {
+    width: 100%;
+  }
+  body main .contactUs .writeNumber input {
+    font-size: 18px;
+  }
+  body main .contactUs .writeNumber button {
+    font-size: 18px;
+  }
+  body main .swiper-container {
+    width: 70%;
+  }
+  body footer .container .lastInfo .weApp #svgLeft {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  body header .container .headercontent h1 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  body header .container .searchBbox input {
+    font-size: 18px;
+  }
+  body header .container .searchBbox button {
+    font-size: 18px;
+    padding: 15px 45px;
+  }
+  body header .container .searchBbox button span::after {
+    left: -26px;
+    top: -12px;
+  }
+  body main .cards .card .cardFooter {
+    height: 70px;
+  }
+  body main .aboutUs .usLeft #titleUs {
+    margin-bottom: 0px;
+  }
+  body main .aboutUs .usLeft .usItem {
+    margin-top: 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body main .aboutUs .usLeft .usItem .itemText {
+    text-align: center;
+  }
+  body main .contactUs .contactText h1 {
+    font-size: 25px;
+  }
+  body main .contactUs .contactText h2 {
+    font-size: 20px;
+  }
+  body main .gallery {
+    margin-top: 80px;
+  }
+  body main .moreIdeas {
+    margin-top: 80px;
+  }
+  body main .moreIdeas .ideascontainer .moreLeft {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body main .moreIdeas .ideascontainer .moreLeft button {
+    width: 80%;
+    font-size: 25px;
+  }
+  body main .moreIdeas .ideascontainer .moreRight {
+    margin-bottom: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */
